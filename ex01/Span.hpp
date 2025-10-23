@@ -6,7 +6,7 @@
 /*   By: tobourge <tobourge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 11:07:41 by tobourge          #+#    #+#             */
-/*   Updated: 2025/10/23 12:13:31 by tobourge         ###   ########.fr       */
+/*   Updated: 2025/10/23 18:24:03 by tobourge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,24 @@ class Span
     
         Span();
         Span(unsigned int N);
+        Span(const Span & src);
         ~Span();
 
-        void    addNumber();
+        Span    &operator=(const Span & src);
+
+        void            addNumber(int number);
+        unsigned int    shortestSpan() const;
+        unsigned int    longestSpan() const;
+
+    class   FullContainerException : public std::exception
+    {
+        virtual const char* what() const throw();
+    };
+
+    class   NotEnoughNumbersException : public std::exception
+    {
+        virtual const char* what() const throw();
+    };
 
     private:
     
