@@ -6,7 +6,7 @@
 /*   By: tobourge <tobourge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 16:40:27 by tobourge          #+#    #+#             */
-/*   Updated: 2025/10/23 18:24:02 by tobourge         ###   ########.fr       */
+/*   Updated: 2025/10/24 10:14:21 by tobourge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,24 @@ int main(void)
 
         std::cout << "Shortest Span --> " << sp.shortestSpan() << std::endl;
         std::cout << "Longest Span --> " << sp.longestSpan() << std::endl;
+        std::cout << std::endl << std::endl;
+    }
+    {
+        std::cout << "------- ADD MULTIPLE NUMBERS -------" << std::endl;
+
+        Span                sp = Span(5);
+        std::vector<int>    array;
+
+        array.push_back(1);
+        array.push_back(2);
+        array.push_back(3);
+        array.push_back(4);
+        array.push_back(5);
+
+        sp.addArray(array);
+        std::cout << "Longest Span --> " << sp.longestSpan() << std::endl;
+
+        sp.addArray(array);
         std::cout << std::endl << std::endl;
     }
     return 0;

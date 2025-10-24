@@ -6,7 +6,7 @@
 /*   By: tobourge <tobourge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 11:07:37 by tobourge          #+#    #+#             */
-/*   Updated: 2025/10/23 18:24:03 by tobourge         ###   ########.fr       */
+/*   Updated: 2025/10/24 10:14:22 by tobourge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,24 @@ void    Span::addNumber(int number)
     }
     _tab.push_back(number);
 }
+
+void    Span::addArray(std::vector<int> array)
+{
+    try 
+    {
+        if (_tab.size() + array.size() > _n)
+            throw FullContainerException();
+    }
+    catch (std::exception &err)
+    {
+        std::cout << err.what() << std::endl;
+    }
+    for (std::vector<int>::iterator it = array.begin(); it != array.end(); it++)
+    {
+        _tab.push_back(*it);
+    }
+}
+
 
 unsigned int    Span::longestSpan() const
 {

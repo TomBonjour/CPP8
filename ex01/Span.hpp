@@ -6,7 +6,7 @@
 /*   By: tobourge <tobourge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 11:07:41 by tobourge          #+#    #+#             */
-/*   Updated: 2025/10/23 18:24:03 by tobourge         ###   ########.fr       */
+/*   Updated: 2025/10/24 10:14:22 by tobourge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Span
         Span    &operator=(const Span & src);
 
         void            addNumber(int number);
+        void            addArray(std::vector<int> array);
         unsigned int    shortestSpan() const;
         unsigned int    longestSpan() const;
 
